@@ -3,8 +3,8 @@ version: '3.9'
 services:
   payara:
     image: payara/server-full:latest
-    container_name: customer-api
+    container_name: customers-api
     ports:
       - "8080:8080"
     volumes:
-      - ./target/customer-api-1.0-SNAPSHOT.war:/opt/payara/deployments/customer-api.war
+      - ./target/customers-api-1.0-SNAPSHOT.war:/opt/payara/deployments/customers-api.war
