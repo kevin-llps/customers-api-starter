@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.esgi.customer</groupId>
-    <artifactId>customer-api-solutions</artifactId>
+    <artifactId>customer-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>customer-api-solutions</name>
+    <name>customer-api</name>
     <packaging>war</packaging>
 
     <properties>
         <maven-war-plugin.version>3.2.3</maven-war-plugin.version>
-        <maven-compiler-plugin.target>17</maven-compiler-plugin.target>
-        <maven-compiler-plugin.source>17</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>21</maven-compiler-plugin.target>
+        <maven-compiler-plugin.source>21</maven-compiler-plugin.source>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
         <commons-csv.version>1.10.0</commons-csv.version>
@@ -95,6 +95,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <argLine>-Dnet.bytebuddy.experimental=true</argLine>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
